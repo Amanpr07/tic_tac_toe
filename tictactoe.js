@@ -37,7 +37,7 @@ boxes.forEach((box)=>{
     box.disabled=true;
     count++;
     let isWinner=checkWinner();
-    if(count===9 && !inWinner){
+    if(count===9 && !isWinner){
       gameDraw();
     }
   });
@@ -46,6 +46,7 @@ const gameDraw = () => {
   msg.innerText = `Game was a Draw.`;
   msgContainer.classList.remove("hide");
   disableBoxes();
+  resetGame();
 };
 const disableBoxes=()=>{
   for(let box of boxes){
